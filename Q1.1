@@ -1,0 +1,26 @@
+package guviTask2;
+public class Person {
+    String name;
+    int age;
+
+    // Constructor
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Display method
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    // Test it
+    public static void main(String[] args) {
+        Person p1 = new Person("Indhu", 22);   // Indhu with age 22
+        Person p2 = new Person("Ajay", 23);    // Ajay with age 23
+
+        p1.display();
+        p2.display();
+    }
+}
