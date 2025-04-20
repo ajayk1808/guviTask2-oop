@@ -1,0 +1,53 @@
+// Product.java
+class Product {
+    int pid;
+    double price;
+    int quantity;
+
+    // Constructor
+    Product(int pid, double price, int quantity) {
+        this.pid = pid;
+        this.price = price;
+        this.quantity = quantity;
+    }
+}
+// ProductMain.java
+public class ProductMain {
+    public static void main(String[] args) {
+        // Create array of 5 Product objects
+        Product[] products = new Product[5];
+
+        // Add 5 products
+        products[0] = new Product(101, 50.0, 2);
+        products[1] = new Product(102, 75.0, 1);
+        products[2] = new Product(103, 20.0, 5);
+        products[3] = new Product(104, 100.0, 1);
+        products[4] = new Product(105, 60.0, 3);
+
+        // Find product with highest price
+        double highestPrice = 0;
+        int highestPid = -1;
+
+        for (Product p : products) {
+            if (p.price > highestPrice) {
+                highestPrice = p.price;
+                highestPid = p.pid;
+            }
+        }
+
+        System.out.println("Product with highest price has PID: " + highestPid);
+
+        // Calculate total amount
+        double totalAmount = calculateTotal(products);
+        System.out.println("Total amount spent: " + totalAmount);
+    }
+
+    // Method to calculate total amount
+    static double calculateTotal(Product[] products) {
+        double total = 0;
+        for (Product p : products) {
+            total += p.price * p.quantity;
+        }
+        return total;
+    }
+}
