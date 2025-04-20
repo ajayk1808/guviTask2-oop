@@ -1,0 +1,45 @@
+package guviTask2Q3;
+public class Account {
+    double balance; // Variable to hold the current balance of the account
+
+    // Default constructor - sets initial balance to 0.0 if no value is provided
+    Account() {
+        balance = 0.0;
+    }
+
+    // Parameterized constructor - allows setting an initial balance when creating the object
+    Account(double initialBalance) {
+        balance = initialBalance;
+    }
+
+    // Method to deposit money into the account
+    void deposit(double amount) {
+        balance += amount; // Add the deposit amount to current balance
+        System.out.println("Deposited: " + amount);
+    }
+
+    // Method to withdraw money from the account
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount; // Subtract the amount from balance if sufficient funds are available
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance!"); // Show warning if not enough balance
+        }
+    }
+
+    // Method to display current balance
+    void displayBalance() {
+        System.out.println("Current Balance: " + balance);
+    }
+
+    // Main method to test the class functionality
+    public static void main(String[] args) {
+        // Create an Account object with initial balance of 1000
+        Account acc = new Account(1000);
+
+        acc.deposit(500);        // Deposit 500 → balance becomes 1500
+        acc.withdraw(300);       // Withdraw 300 → balance becomes 1200
+        acc.displayBalance();    // Display current balance → prints 1200
+    }
+}
