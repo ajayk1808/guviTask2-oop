@@ -1,0 +1,46 @@
+package guviTask2Q4;
+
+//Base class
+class Person {
+ String name;
+ int age;
+
+ // Constructor for Person
+ Person(String name, int age) {
+     this.name = name;
+     this.age = age;
+ }
+
+ // Method to display person details
+ void displayPerson() {
+     System.out.println("Name: " + name);
+     System.out.println("Age: " + age);
+ }
+}
+
+//Subclass Employee that inherits from Person
+public class Employee extends Person {
+ int employeeID;
+ double salary;
+
+ // Constructor for Employee using super to call Person constructor
+ Employee(String name, int age, int employeeID, double salary) {
+     super(name, age); // Call base class constructor
+     this.employeeID = employeeID;
+     this.salary = salary;
+ }
+
+ // Method to display employee details
+ void displayEmployee() {
+     displayPerson(); // Call base class method
+     System.out.println("Employee ID: " + employeeID);
+     System.out.println("Salary: " + salary);
+ }
+
+ // Main method to test
+ public static void main(String[] args) {
+     Employee emp = new Employee("Ajay", 23, 1001, 45000.50);
+     emp.displayEmployee();
+ }
+}
+
